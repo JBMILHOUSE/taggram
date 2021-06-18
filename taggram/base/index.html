@@ -9,16 +9,54 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <script src="index.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
+
   </head>
 
   <body class="body">
     <header class="header">
       <div class="header__container">
+        <img class="logo" src="./assets/Taggram.png" alt="Taggram">
         <div class="current-user">
           <div class="current-user__username" id="current-user-username"></div>
           <div class="current-user__avatar" id="current-user-avatar"></div>
         </div>
       </div>
     </header>
+
+    <main class="post">
+      <div class="foto" id="current-post-photo"></div>
+      <div class="comments-header">
+        <div class="author-avatar" id="current-post-avatar"></div>
+        <div class="author-name" id="current-author-name"></div>
+        <div class="author-location" id="current-author-location"></div>
+      </div>
+
+      <div class="comments-list" id="current-post-comments"></div>
+
+      <div class="comments-footer">
+        <div class="comments-count" id="comments-count"></div>
+        <div class="comments-date" id="comments-date"></div>
+        <div class="comments-footer-border"></div>
+        <input
+          class="writeComment"
+          text="text"
+          id="commentId"
+          placeholder="Hello world"
+        />
+        <a class="enviar" id="sendId" onclick="sendComment()">
+          Enviar
+        </a>
+      </div>
+    </main>
+
+    <div class="tagview">
+      <img src="./assets/tagview.png" alt="Tagview" >
+    </div>
   </body>
 </html>
