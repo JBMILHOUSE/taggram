@@ -63,20 +63,18 @@
         $location.innerHTML = post.location.city + ", " + post.location.country;
 
         $commentsCount.innerHTML = `${post.comments.length} comentários`;
-        console.log(post.created_at);
 
         const dayView = post.created_at.substring(8, 10);
         const dateView = post.created_at.substring(5, 7);
 
-        console.log(qualMes(dateView));
         var comentarios = post.comments;
         $datePhoto.innerHTML = dayView + " de " + qualMes(dateView);
 
         comentarios.forEach((comentario) => {
           const date = new Date(comentario.created_at);
           const year = date.getFullYear();
-          let month = date.getMonth() + 1;
-          let dt = date.getDate();
+          const month = date.getMonth() + 1;
+          const dt = date.getDate();
 
           if (dt < 10) {
             dt = "0" + dt;
@@ -84,26 +82,27 @@
           if (month < 10) {
             month = "0" + month;
           }
-          var commentDate = year + "-" + month + "-" + dt;
-          var commentDateFromNow = moment(commentDate).fromNow();
+
+          const commentDate = year + "-" + month + "-" + dt;
+          const commentDateFromNow = moment(commentDate).fromNow();
 
           $comments.innerHTML += `
-          <div class="comment">
-           <div class="comment-author">
-            <div style="background-image: url(${comentario.user.avatar})" class="comment-author-img" id="comment-author-img">
+           <div class="comment">
+            <div class="comment-author">
+             <div style="background-image: url(${comentario.user.avatar})" class="comment-author-img" id="comment-author-img">
+             </div>
             </div>
-            </div>
-           <div class="comment-message-date">
-            <div class="comment-message">
-            <b>${comentario.user.username}</b> ${comentario.message}
-            </div>
-            <div class="comment-date">
+            <div class="comment-message-date">
+             <div class="comment-message">
+              <b>${comentario.user.username}</b> ${comentario.message}
+             </div>
+             <div class="comment-date">
               ${commentDateFromNow}
+             </div>
             </div>
-           </div>
-         </div>
-          `;
+           </div>`;
         });
+
         $username.innerHTML = post.user.username;
 
         if (post.photo) {
