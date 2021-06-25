@@ -1,13 +1,9 @@
- Index
-
-- [Sobre](#about)
-
-
 <a id="about"></a>
 
 ## :bookmark: Sobre
 
-Desafio front-end para o programa de estágio da empresa TagView
+Desafio front-end para o programa de estágio da empresa TagView.
+
 
 
 <h4 align="center">
